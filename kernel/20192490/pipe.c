@@ -1,5 +1,6 @@
 #include <sys/types.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -33,7 +34,8 @@ int pipe_com (void) {
     printf("read '%s' \n", read_msg);
 
     close(fd[READ_END]);
-    return 0;
+    
+    exit(1);
   }
   else {
     printf("send a message '%s' through a pipe \n", write_msg);

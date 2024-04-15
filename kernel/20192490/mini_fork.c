@@ -15,7 +15,7 @@ int mini_fork() {
   else if (pid == 0) {
     printf("Child process is running \n");
     // execlp("/bin/ls", "ls", NULL);
-    execl("/home/hyunwoo/miniOS/kernel/20192490/print_os_name", "print_os_name", NULL);
+    execl("/home/hyunwoo-kim/miniOS/kernel/20192490/print_os_name", "print_os_name", NULL);
     perror("execl is failed! \n");     
 
     printf("Maybe, This won't show \n");

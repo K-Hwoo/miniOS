@@ -9,6 +9,7 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+#include <wait.h>
 
 int shm_com() {
   const int SIZE = 4096;
@@ -47,9 +48,9 @@ int shm_com() {
 
     printf("%s", (char *)ptr);
    
-    shm_unlink("OS"); 
+    shm_unlink("OS");
 
-    return 0;
+    exit(1);
   }	
   else {
     wait(NULL);
