@@ -39,20 +39,17 @@ int shm_com() {
   if (pid < 0) {
     fprintf(stderr, "Fork failed");
     return 1;
-  }
-  else if (pid == 0) {
+  } else if (pid == 0) {
     printf("Child process에서 Shared memory의 값을 읽어옵니다. \n");
     
     fd = shm_open(name, O_RDONLY, 0666);
     ptr = (char *)mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
     printf("%s", (char *)ptr);
+    sleep(1);
    
-    shm_unlink("OS");
-
-    exit(1);
-  }	
-  else {
+    shm_unlink(name);
+  }	else {
     wait(NULL);
     printf("Shared memory test를 종료합니다. \n");
   }
