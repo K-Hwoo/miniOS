@@ -33,23 +33,24 @@ int main() {
             mini_fork();    
         }
 
-	else if (strcmp(input, "shm_com") == 0) {
-	    shm_com();
-	}
+	    else if (strcmp(input, "shm_com") == 0) {
+	        shm_com();
+	    }
 
         else if (strcmp(input, "pipe_com") == 0) {
             pipe_com();
-	}
+	    }
         
         else {
             system(input); 
         }
-}
+    }
+
     // 메모리 해제
     free(input);
     print_minios("[MiniOS SSU] MiniOS Shutdown........");
 
-    return(1);
+    return 0;
 }
 
 void print_minios(char* str) {
