@@ -41,6 +41,10 @@ int main() {
             pipe_com();
 	    }
         
+        else if (strcmp(input, "monte_carlo") == 0) {
+            monte_carlo();
+        }
+
         else {
             system(input); 
         }

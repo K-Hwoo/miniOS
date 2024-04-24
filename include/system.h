@@ -10,3 +10,5 @@ void mini_fork();
 int shm_com();
 
 int pipe_com();
+
+int monte_carlo();

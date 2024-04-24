@@ -46,8 +46,8 @@ int shm_com() {
     ptr = (char *)mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
     printf("%s", (char *)ptr);
-    sleep(1);
-   
+    sleep(2);
+    
     shm_unlink(name);
   }	else {
     wait(NULL);
