@@ -4,8 +4,8 @@
 #include <math.h>
 #include <pthread.h>
 
-#define NUM_THREAD 10
-#define NUM_POINT 200000
+#define NUM_THREAD 6
+#define NUM_POINT 500000
 
 int points = 0;
 int inner_points = 0; // 원 안에 찍힌 점 갯수

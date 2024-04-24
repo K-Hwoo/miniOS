@@ -28,10 +28,10 @@ int main() {
 
     srand(time(NULL));
 
-    // 스레드 사용 안하고 점 2,000,000개를 생성할 때
+    // 스레드 사용 안하고 점 3,000,000개를 생성할 때
     clock_t start_r = clock();
-    printf("< 스레드 사용 안하고 점 2,000,000개를 찍으면? > \n");
-    for (int j=0; j<2000000; j++) {
+    printf("< 스레드 사용 안하고 점 3,000,000개를 찍으면? > \n");
+    for (int j=0; j<3000000; j++) {
         p_r.x = make_random_minus_one_to_one();
         p_r.y = make_random_minus_one_to_one();
 
