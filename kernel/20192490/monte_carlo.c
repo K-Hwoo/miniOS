@@ -10,6 +10,8 @@
 int points = 0;
 int inner_points = 0; // 원 안에 찍힌 점 갯수
 
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; // 뮤텍스 초기화
+
 typedef struct
 {
     double x;
@@ -84,11 +86,15 @@ void * make_point(void * thread_num) {
         p.y = make_random_minus_one_to_one();
 
         if (cal_distance(p.x, p.y) <= 1) {
+            pthread_mutex_lock(&mutex); // 잠금
             inner_points++; // 전역변수
+            pthread_mutex_unlock(&mutex); // 잠금 해제
             in++; // 지역변수
         } 
 
+        pthread_mutex_lock(&mutex); // 잠금
         points++; // 전역변수
+        pthread_mutex_unlock(&mutex); // 잠금 해제
         all++; // 지역변수
     }
     printf(" [ %d번 스레드 - 종료 (찍은 점 개수-%d, 원 안에 찍힌 점 개수-%d) ] \n", thread_num+1, all, in);
